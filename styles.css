@@ -1,0 +1,436 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Playfair Display', serif; /* Apply Playfair Display globally */
+}
+
+/* Container for the main page (split between About and Portfolio) */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left Section (About) */
+.section.about {
+    background-image: url('images/about-image.jpg'); /* About background image */
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8); /* Use translucent black color */
+}
+
+.about .content h1 {
+    font-size: 5rem;
+    color: olive;
+}
+
+.about .content .arrow {
+    font-size: 3rem;
+    color: olive;
+    margin-top: 20px;
+}
+
+/* Right Section (Portfolio) */
+.section.portfolio {
+    background-image: url('images/portfolio-image.jpg'); /* Portfolio background image */
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8); /* Use translucent black color */
+}
+
+.portfolio .content h1 {
+    font-size: 5rem;
+    color: #e74c3c;
+}
+
+.portfolio .content .arrow {
+    font-size: 3rem;
+    color: #e74c3c;
+    margin-top: 20px;
+}
+
+/* Hover Effect */
+.about-link:hover .content h1,
+.portfolio-link:hover .content h1 {
+    opacity: 0.8;
+}
+
+/* Portfolio List Overlay */
+.portfolio-list-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Faded overlay background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-list {
+    text-align: center;
+}
+
+.portfolio-list h2 {
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.8); /* Dark translucent color */
+    margin-bottom: 20px;
+}
+
+.portfolio-list ul {
+    list-style: none;
+    padding: 0;
+    font-family: 'Playfair Display', serif; /* Use Playfair Display font */
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: rgba(0, 0, 0, 0.8); /* Darker but translucent color */
+}
+
+.portfolio-list ul li {
+    margin-bottom: 15px;
+}
+
+.portfolio-list ul li:hover {
+    color: rgba(0, 0, 0, 1); /* Darker on hover */
+}
+
+/* About List Overlay */
+.about-list-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Faded overlay background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-list {
+    text-align: center;
+}
+
+.about-list h2 {
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.8); /* Dark translucent color */
+    margin-bottom: 20px;
+}
+
+.about-list ul {
+    list-style: none;
+    padding: 0;
+    font-family: 'Playfair Display', serif; /* Use Playfair Display font */
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: rgba(0, 0, 0, 0.8); /* Darker but translucent color */
+}
+
+.about-list ul li {
+    margin-bottom: 15px;
+}
+
+.about-list ul li:hover {
+    color: rgba(0, 0, 0, 1); /* Darker on hover */
+}
+
+/* Adjust list spacing */
+.about-list ul li, .portfolio-list ul li {
+    letter-spacing: 0.05rem;
+}
+
+/* Custom font import from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* Faded background effect */
+.fade-bg {
+    opacity: 0.3;
+}
+
+/* Gallery Section */
+.branding-gallery {
+    padding: 50px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.branding-gallery h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.gallery-item {
+    margin-bottom: 50px;
+}
+
+.gallery-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.gallery-item img {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Global Styles */
+body {
+  font-family: 'Playfair Display', serif; /* Apply Playfair Display globally */
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* Background color matching the reference */
+}
+
+/* Container for the whole page */
+.business-branding-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeaea; /* Matching background */
+}
+
+/* First Section: Text and Image */
+.branding-section {
+  display: flex;
+  padding: 50px;
+}
+
+/* Left Section: Image */
+.branding-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.branding-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Section: Description */
+.branding-description {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+.branding-description h1 {
+  font-size: 3rem;
+  color: olive;
+}
+
+.branding-description h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.branding-description p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Second Section: Gallery */
+.branding-gallery {
+  padding: 50px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.branding-gallery h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.gallery-item {
+  margin-bottom: 50px;
+}
+
+.gallery-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.gallery-item img {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Global Styles */
+body {
+    font-family: 'Playfair Display', serif; /* Main serif font for elegance */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light gray background */
+    color: #333; /* Dark text for contrast */
+}
+
+/* Container for the whole about page */
+.about-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+/* Introduction Section */
+.intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+    border-bottom: 2px solid #ccc;
+}
+
+.intro-left img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #333;
+}
+
+.highlight-circles {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.highlight-circles p {
+    font-size: 1.2rem;
+    font-family: 'Caveat', cursive;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.intro-right h1 {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-right p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Education Section */
+.education-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.education-section h2 {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.education-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.qr-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.qr-section img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.qr-text p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.qr-text a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.qr-text a:hover {
+    text-decoration: underline;
+}
+
+/* Skills Section */
+.skills-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.skills-section h2 {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.skills-section p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.skills-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-section ul li {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Languages Section */
+.languages-section {
+    margin-top: 50px;
+}
+
+.languages-section h2 {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.languages-section p {
+    font-size: 1.2rem;
+    color: #333;
+}
