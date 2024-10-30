@@ -1,16 +1,27 @@
 // Function to show the overlay
 function showOverlay(overlayId) {
     // Add fade effect to the main content
-    document.querySelector('.container').classList.add('fade-bg');
+    const container = document.querySelector('.container');
+    if (container) {
+        container.classList.add('fade-bg');
+    }
 
     // Show the specified overlay
-    document.getElementById(overlayId).classList.add('visible');
+    const overlay = document.getElementById(overlayId);
+    if (overlay) {
+        overlay.classList.add('visible');
+    } else {
+        console.error(`Overlay with ID "${overlayId}" not found.`);
+    }
 }
 
 // Function to hide the overlay
 function hideOverlays() {
     // Remove fade effect from the main content
-    document.querySelector('.container').classList.remove('fade-bg');
+    const container = document.querySelector('.container');
+    if (container) {
+        container.classList.remove('fade-bg');
+    }
 
     // Hide all overlays
     document.querySelectorAll('.overlay').forEach(overlay => {
@@ -19,14 +30,24 @@ function hideOverlays() {
 }
 
 // Portfolio Link Click Event
-document.querySelector('.portfolio').addEventListener('click', function () {
-    showOverlay('portfolioOverlay');
-});
+const portfolioLink = document.querySelector('.portfolio-link');
+if (portfolioLink) {
+    portfolioLink.addEventListener('click', function () {
+        showOverlay('portfolioOverlay');
+    });
+} else {
+    console.error('.portfolio-link element not found.');
+}
 
 // About Link Click Event
-document.querySelector('.about').addEventListener('click', function () {
-    showOverlay('aboutOverlay');
-});
+const aboutLink = document.querySelector('.about-link');
+if (aboutLink) {
+    aboutLink.addEventListener('click', function () {
+        showOverlay('aboutOverlay');
+    });
+} else {
+    console.error('.about-link element not found.');
+}
 
 // Close Button Click Events for both overlays
 document.querySelectorAll('.overlay button').forEach(button => {
