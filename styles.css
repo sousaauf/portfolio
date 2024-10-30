@@ -37,10 +37,6 @@ html, body {
     color: olive;
 }
 
-.about .content .arrow {
-    font-size: 3rem;
-    color: olive;
-    margin-top: 20px;
 }
 
 /* Right Section (Portfolio) */
@@ -56,7 +52,6 @@ html, body {
 
 .portfolio-link {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.8); /* Use translucent black color */
 }
 
 .portfolio .content h1 {
@@ -64,17 +59,8 @@ html, body {
     color: #e74c3c;
 }
 
-.portfolio .content .arrow {
-    font-size: 3rem;
-    color: #e74c3c;
-    margin-top: 20px;
-}
 
-/* Hover Effect */
-.about-link:hover .content h1,
-.portfolio-link:hover .content h1 {
-    opacity: 0.8;
-}
+
 
 /* Portfolio List Overlay */
 .portfolio-list-overlay {
@@ -91,6 +77,7 @@ html, body {
 
 .portfolio-list {
     text-align: center;
+    color: rgba(0, 0, 0, 0.8); /* Dark translucent color */
 }
 
 .portfolio-list h2 {
@@ -100,11 +87,10 @@ html, body {
 }
 
 .portfolio-list ul {
-    list-style: none;
+    list-style: fixed;
     padding: 0;
     font-family: 'Playfair Display', serif; /* Use Playfair Display font */
     font-size: 2rem;
-    line-height: 2.5rem;
     color: rgba(0, 0, 0, 0.8); /* Darker but translucent color */
 }
 
@@ -345,92 +331,78 @@ body {
     color: #666;
 }
 
-/* Education Section */
-.education-section {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
 
-.education-section h2 {
-    font-size: 2.5rem;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-}
-
-.education-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #333;
-}
-
-.qr-section {
-    display: flex;
+/* Overlay Background */
+.portfolio-list-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    z-index: 1000; /* Ensures it appears on top */
 }
 
-.qr-section img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    margin-right: 20px;
+/* Overlay Visible Class */
+.portfolio-list-overlay.visible {
+    display: flex; /* Show overlay when 'visible' class is added */
 }
 
-.qr-text p {
-    font-size: 1.2rem;
-    color: #666;
+/* Portfolio List Container */
+.portfolio-list {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.qr-text a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.qr-text a:hover {
-    text-decoration: underline;
-}
-
-/* Skills Section */
-.skills-section {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.skills-section h2 {
-    font-size: 2.5rem;
-    font-family: 'Playfair Display', serif;
+/* Portfolio Heading */
+.portfolio-list h2 {
+    font-size: 1.8rem;
+    color: #000;
     margin-bottom: 20px;
 }
 
-.skills-section p {
-    font-size: 1.2rem;
-    color: #666;
-}
-
-.skills-section ul {
-    list-style-type: none;
+/* Portfolio List Items */
+.portfolio-list ul {
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.skills-section ul li {
+.portfolio-list ul li {
+    margin-bottom: 15px;
+}
+
+.portfolio-list ul li a {
+    text-decoration: none;
+    color: #000; /* Black text */
     font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 10px;
 }
 
-/* Languages Section */
-.languages-section {
-    margin-top: 50px;
+.portfolio-list ul li a:hover {
+    color: #666; /* Gray on hover */
 }
 
-.languages-section h2 {
-    font-size: 2.5rem;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
+/* Close Button */
+.portfolio-list button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.languages-section p {
-    font-size: 1.2rem;
-    color: #333;
+.portfolio-list button:hover {
+    background-color: #555; /* Darker gray on hover */
 }

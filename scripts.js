@@ -1,23 +1,34 @@
-// scripts.js
-
-// Portfolio Link Click Event
-document.querySelector('.portfolio-link').addEventListener('click', function (event) {
-    event.preventDefault();
-
-    // Fade out the homepage content
+// Function to show the overlay
+function showOverlay(overlayId) {
+    // Add fade effect to the main content
     document.querySelector('.container').classList.add('fade-bg');
 
-    // Show the portfolio list overlay
-    document.querySelector('.portfolio-list-overlay').style.display = 'flex';
+    // Show the specified overlay
+    document.getElementById(overlayId).classList.add('visible');
+}
+
+// Function to hide the overlay
+function hideOverlays() {
+    // Remove fade effect from the main content
+    document.querySelector('.container').classList.remove('fade-bg');
+
+    // Hide all overlays
+    document.querySelectorAll('.overlay').forEach(overlay => {
+        overlay.classList.remove('visible');
+    });
+}
+
+// Portfolio Link Click Event
+document.querySelector('.portfolio').addEventListener('click', function () {
+    showOverlay('portfolioOverlay');
 });
 
 // About Link Click Event
-document.querySelector('.about-link').addEventListener('click', function (event) {
-    event.preventDefault();
+document.querySelector('.about').addEventListener('click', function () {
+    showOverlay('aboutOverlay');
+});
 
-    // Fade out the homepage content
-    document.querySelector('.container').classList.add('fade-bg');
-
-    // Show the about list overlay
-    document.querySelector('.about-list-overlay').style.display = 'flex';
+// Close Button Click Events for both overlays
+document.querySelectorAll('.overlay button').forEach(button => {
+    button.addEventListener('click', hideOverlays);
 });
